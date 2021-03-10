@@ -1,0 +1,57 @@
+controle financeiro marcio
+
+*Cadastro de Produto
+id
+descrição
+Descrição_Curta
+peso
+largura 
+altura
+comprimento
+Classificação_fiscal
+Origem
+Situação
+Peso_bruto(Kg)
+GTIN/EAN
+Marca
+
+
+*Cadastro de Entradas
+
+id
+idproduto
+DTCAD
+DTENTR
+Fornecedor
+Qtd
+ValorUn
+ValorTot
+Saldo
+
+
+*Cadastro de Saidas
+id
+idproduto
+DTCAD
+DTSAID
+Marketplace
+Qtd
+PrecoVendaUn
+PrecoVendaTot
+CustoMedio
+LucroMedio
+
+*Estoque Saidas
+IDESTQS
+DTCAD
+IDSAID
+IDENTR
+QTD
+VLRENTRTOT
+
+*Estoque
+IDESTQ
+idproduto
+qtd
+media_un
+media_tot

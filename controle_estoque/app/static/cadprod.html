@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container box-shadow" >
+    <div class="row">
+      <h4>Cadastro de Produtos</h4>
+      <div class="divider"></div>
+    </div>
+    <div class="row">
+
+    <form class="col s12" role="form" charset="UTF-8"  action="/cadprod" method="post">
+      <div class="row">
+        <div class="input-field col s3">
+          <input readonly="readonly" value="{{ form.IDPROD }}" id="IDPROD" name="IDPROD" type="text" class="validate">
+          <label for="IDPROD">IDPROD</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input id="CODFORNECEDOR" name="CODFORNECEDOR" type="text" class="validate"  required minlength="2" maxlength="20" value="{{ form.CODFORNECEDOR }}">
+          <label for="CODFORNECEDOR" data-error="Preencha o campo Nome" >CODFORNECEDOR</label>
+        </div>
+        <div class="input-field col s5">
+          <input id="DESCRICAO" name="DESCRICAO" type="text" class="validate"  required minlength="2" maxlength="20" value="{{ form.DESCRICAO }}">
+          <label for="DESCRICAO" data-error="Preencha o campo Descrição" >DESCRICAO</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <input id="PESO" name="PESO" type="text" class="validate"  pattern="[0-9]+([,][0-9]+)?" min="1" max="20" value="{{ form.PESO }}">
+          <label for="PESO">PESO</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="ALTURA" name="ALTURA" type="text" class="validate" pattern="[0-9]+([,][0-9]+)?"  min="1" max="20" value="{{ form.ALTURA }}">
+          <label for="ALTURA">ALTURA</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="LARGURA" name="LARGURA" type="text" class="validate" pattern="[0-9]+([,][0-9]+)?"  min="1" max="20" value="{{ form.LARGURA }}">
+          <label for="LARGURA">LARGURA</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input id="COMPRIMENTO" name="COMPRIMENTO" type="text" class="validate" pattern="[0-9]+([,][0-9]+)?"  min="1" max="20" value="{{ form.COMPRIMENTO }}">
+          <label for="COMPRIMENTO">COMPRIMENTO</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <input id="CLASSFISC" name="CLASSFISC" type="text" class="validate"  value="{{ form.CLASSFISC }}">
+          <label for="CLASSFISC">CLASSFISC</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="ORIGEM" name="ORIGEM" type="text" class="validate" value="{{ form.ORIGEM }}">
+          <label for="ORIGEM">ORIGEM</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="GTINEAN" name="GTINEAN" type="text" class="validate" value="{{ form.GTINEAN }}">
+          <label for="GTINEAN">GTINEAN</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="MARCA" name="MARCA" type="text" class="validate" value="{{ form.MARCA }}">
+          <label for="MARCA">MARCA</label>
+        </div>
+
+      </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col m12">
+             <p class="right-align">
+
+               <button class="btn btn-large waves-effect waves-light red lighten-1" type="reset" onClick="window.location.reload();">Cancelar</button>
+               <button class="btn btn-large waves-effect waves-light" type="submit" name="action">Gravar</button>
+             </p>
+
+            </div>
+        </div>
+
+    </form>
+    </div>
+    </div>
+<script type="text/javascript" >
+
+</script>
+
+{% endblock %}

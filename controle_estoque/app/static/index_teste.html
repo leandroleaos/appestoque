@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container box-shadow" >
+    <div class="row">
+      <h4>Cadastro de produtos</h4>
+      <div class="divider"></div>
+    </div>
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s3">
+          <input disabled value="{{ form.IDPROD }}" id="IDPROD" type="text" class="validate">
+          <label for="disabled">IDPROD</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input id="CODFORNECEDOR" type="text" class="validate" pattern="[A-Za-zÀ-ú\s]+$" required minlength="2" maxlength="20" value="{{ form.CODFORNECEDOR }}">
+          <label for="CODFORNECEDOR" data-error="Preencha o campo Nome" >CODFORNECEDOR</label>
+        </div>
+        <div class="input-field col s5">
+          <input id="DESCRICAO" type="text" class="validate" pattern="[A-Za-zÀ-ú\s]+$" required minlength="2" maxlength="20" value="{{ form.DESCRICAO }}">
+          <label for="DESCRICAO" data-error="Preencha o campo Descrição" >DESCRICAO</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <input id="PESO" type="number" class="validate"  required min="1" max="20">
+          <label for="PESO">PESO</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="ALTURA" type="text" class="validate" pattern="[0-9]+$" required min="1" max="20">
+          <label for="ALTURA">ALTURA</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="COMPRIMENTO" type="text" class="validate" pattern="[0-9]+$" required min="1" max="20">
+          <label for="COMPRIMENTO">COMPRIMENTO</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <input id="CLASSFISC" type="text" class="validate">
+          <label for="CLASSFISC">CLASSFISC</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="ORIGEM" type="date" class="validate">
+          <label for="ORIGEM">ORIGEM</label>
+        </div>
+        <div class="input-field col s1">
+          <input id="SITUACAO" type="text" class="validate">
+          <label for="SITUACAO">SITUACAO</label>
+        </div>
+
+      </div>
+    </form>
+    </div>
+
+
+
+	<body>
+{% endblock %}

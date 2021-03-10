@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--JavaScript at end of body for optimized loading-->
+
+    <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style>
+        .box-shadow {
+            padding: 25px;
+            box-shadow: 0px 10px 20px rgb(0 0 0 / 7%);
+            margin-bottom: 65px;
+            margin-top: 10px;
+            background-color: #fff;
+            overflow: auto;
+        }
+      </style>
+      {% block javascriptcont %}{% endblock %}
+    </head>
+
+    <body>
+    <nav>
+      <div class="black nav-wrapper">
+        <a href="/" class="brand-logo">Controle</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+          <li><a href="lstprod">Produto</a></li>
+          <li><a href="lstentrada">Entrada</a></li>
+          <li><a href="lstsaida">Saida</a></li>
+          <li><a href="">Relatório</a></li>
+        </ul>
+      </div>
+    </nav>
+    {% block content %}
+          <li><a href="lstprod">Produto</a></li>
+          <li><a href="lstentrada">Entrada</a></li>
+          <li><a href="lstsaida">Saida</a></li>
+          <li><a href="">Relatório</a></li>
+
+    {% endblock %}
+
+    </body>
+  </html>

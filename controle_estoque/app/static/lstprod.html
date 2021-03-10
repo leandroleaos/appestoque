@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container box-shadow" >
+    <div class="row">
+      <h4>Lista de Produtos</h4>
+      <div class="divider"></div>
+    </div>
+    <div class="row">
+        <a class="btn  waves-effect red lighten-2"  href="cadprod">Novo</a>
+
+        <table class="highlight responsive-table">
+        <thead>
+          <tr>
+              <th>Id</th>
+              <th>CODFORNECEDOR</th>
+              <th>DESCRICAO</th>
+              <th>PESO</th>
+              <th>LARGURA</th>
+              <th>ALTURA</th>
+              <th>COMPRIMENTO</th>
+              <th>MARCA</th>
+              <th>SALDO</th>
+
+
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for ver in listadados %}
+            <tr >
+                <td style="width: 100px;"> <a href="cadprod?id={{ ver.IDPROD }} "> {{ ver.IDPROD }}</a></td>
+                <td >{{ ver.CODFORNECEDOR }}</td>
+                <td >{{ ver.DESCRICAO }}</td>
+                <td >{{ ver.PESO }}</td>
+                <td >{{ ver.LARGURA }}</td>
+                <td >{{ ver.ALTURA }}</td>
+                <td >{{ ver.COMPRIMENTO }}</td>
+                <td >{{ ver.MARCA }}</td>
+                <td >{{ ver.QTDSALDO }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    </div>
+{% endblock %}

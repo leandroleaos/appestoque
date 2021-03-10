@@ -1,0 +1,283 @@
+dd<html>
+<head>
+
+<style>
+/* Layout */
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #888;
+}
+
+sidebar{
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  background: #999;
+}
+
+main{
+  position: absolute;
+  top: 50px;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  background: #CCC;
+  padding: 1rem;
+}
+
+#content{
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* This is what we are focused on */
+.table-wrapper{
+  overflow-y: scroll;
+  flex-grow: 1;
+}
+
+.table-wrapper th{
+    position: sticky;
+    top: 0;
+}
+
+/* A bit more styling to make it look better */
+.table-wrapper{
+  background: CadetBlue;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+th{
+    background: #DDD;
+}
+
+td,th{
+  padding: 10px;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+<nav></nav>
+<sidebar></sidebar>
+<main>
+<div id="content" class=container>
+<div class="table-wrapper">
+<table >
+<thead>
+	<tr>
+	<th width=200> January </th>
+	<th width=200> February </th>
+	<th width=200> March </th>
+	<th width=200> Apr </th>
+	<th width=200> May </th>
+	<th width=200> January </th>
+	<th width=200> February </th>
+	<th width=200> March </th>
+	<th width=200> Apr </th>
+	<th width=200> May </th>
+	<th width=200> January </th>
+	<th width=200> February </th>
+	<th width=200> March </th>
+	<th width=200> Apr </th>
+	<th width=200> May </th>
+	</tr>
+</thead>
+
+<tbody>
+	<tr>
+	<td > aaaa</td>
+	<td > bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+	<tr>
+	<td width=200> aaaa</td>
+	<td width=200> bbbb </td>
+	<td width=200> cccc</td>
+	<td width=200> ddd</td>
+	<td width=200> eee</td>
+	<td width=200> fff</td>
+	<td width=200> ggg</td>
+	<td width=200> hhh</td>
+	<td width=200> iii</td>
+	<td width=200> jjj</td>
+	<td width=200> kkk</td>
+	<td width=200> lll</td>
+	<td width=200> mmm</td>
+	<td width=200> nn</td>
+	<td width=200> ppp</td>
+	</tr>
+</tbody>
+</table>
+</div>
+</div>
+<diV>
+
+teste
+fffff
+</div>
+</main>
+</body>
+</html>

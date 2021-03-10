@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container box-shadow" >
+    <div class="row">
+      <h4>Cadastro Entradas</h4>
+      <div class="divider"></div>
+    </div>
+    <div class="row">
+
+    <form class="col s12" role="form" charset="UTF-8"  action="/cadentrada" method="post">
+      <div class="row">
+
+        <div class="input-field col s3">
+          <input readonly="readonly" value="{{ form.IDENTR }}" id="IDENTR" name="IDENTR" type="text" class="validate">
+          <label for="IDENTR">IDENTR</label>
+        </div>
+
+        <div class="input-field col s4">
+
+            <select  id="IDPROD" name="IDPROD" >
+                <option value="" disabled {% if form.IDPROD =='' %} selected {% endif%} >Escolha uma opção</option>
+                {% for prod in lstprod %}
+                <option value="{{ prod[0] }}"
+                {% if prod[0]== form.IDPROD %} selected {% endif%}
+                >{{ prod[1] }}</option>
+                {% endfor %}
+            </select>
+            <label for="IDPROD">Produto</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <input id="DTENTR" name="DTENTR" type="text" class="validate"  required minlength="2" maxlength="20" value="{{ form.DTENTR }}">
+          <label for="DTENTR" data-error="Preencha o campo Descrição" >Data Entrada</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input id="FORNECEDOR" name="FORNECEDOR" type="text" class="validate"  maxlength="60" value="{{ form.FORNECEDOR }}">
+          <label for="FORNECEDOR">FORNECEDOR</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s2">
+          <input id="QTD" name="QTD" type="text" class="validate" pattern="[0-9]+([0-9]+)?"   onchange="calcular();" value="{{ form.QTD }}">
+          <label for="QTD">QTD</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="VLRUN" name="VLRUN" type="text" class="validate" pattern="[0-9]+([,][0-9]+)?"   onchange="calcular();" value="{{ form.VLRUN }}">
+          <label for="VLRUN">Valor Un</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input id="VLRTOT" name="VLRTOT" type="text" class="validate" pattern="[0-9]+([,][0-9]+)?"   value="{{ form.VLRTOT }}">
+          <label for="VLRTOT">Valor Total</label>
+        </div>
+      </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col m12">
+             <p class="right-align">
+
+               <button class="btn btn-large waves-effect waves-light red lighten-1" type="reset" onClick="window.location.reload();">Cancelar</button>
+               <button class="btn btn-large waves-effect waves-light" type="submit" name="action">Gravar</button>
+             </p>
+
+            </div>
+        </div>
+
+    </form>
+    </div>
+    </div>
+<script type="text/javascript" >
+
+$(document).ready(function(){
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+ });
+
+function substituiVirgula(valor){
+    if (valor.indexOf(",") >= 0) {
+        var novoValor = valor.replace(",",".");
+        return novoValor;
+    } else {
+        return valor;
+    }
+}
+
+function substituiponto(valor){
+    if (valor.indexOf(".") >= 0) {
+        var novoValor = valor.replace(".",",");
+        return novoValor;
+    } else {
+        return valor;
+    }
+}
+
+
+ function calcular() {
+    var num1 = Number(substituiVirgula(document.getElementById("QTD").value));
+    var num2 = Number(substituiVirgula(document.getElementById("VLRUN").value));
+    var tot = num1 * num2
+    $('#VLRTOT').val(substituiponto(String(tot.toFixed(2))));
+    $('#VLRUN').val(substituiponto(String(num2.toFixed(2))));
+
+}
+</script>
+
+{% endblock %}

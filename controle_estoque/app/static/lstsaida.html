@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container box-shadow" >
+    <div class="row">
+      <h4>Lista de Saidas</h4>
+      <div class="divider"></div>
+    </div>
+    <div class="row">
+        <a class="btn  waves-effect red lighten-2"  href="cadsaida">Novo</a>
+
+        <table class="highlight responsive-table">
+        <thead>
+          <tr>
+              <th>Id</th>
+              <th>Produto</th>
+              <th>Data Entrada</th>
+              <th>Qtd</th>
+              <th>Vlr Un.</th>
+              <th>Vlr Total</th>
+              <th>Vlr Total Geral</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for ver in listadados %}
+            <tr >
+                <td style="width: 100px;"> <a href="cadsaida?id={{ ver.IDSAID }} "> {{ ver.IDSAID }}</a></td>
+                <td >{{ ver.DESCRICAO }}</td>
+                <td >{{ ver.DTSAID }}</td>
+                <td >{{ ver.QTD }}</td>
+                <td >{{ ver.VLRVENDUN|currency }}</td>
+                <td >{{ ver.VLRVENDTOT|currency }}</td>
+                <td >{{ ver.VLRTOTSAID|currency }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container box-shadow" >
+    <div class="row">
+      <h4>Lista de Entradas</h4>
+      <div class="divider"></div>
+    </div>
+    <div class="row">
+        <a class="btn  waves-effect red lighten-2"  href="cadentrada">Novo</a>
+
+        <table class="highlight responsive-table">
+        <thead>
+          <tr>
+              <th>Id</th>
+              <th>Produto</th>
+              <th>Data Entrada</th>
+              <th>Qtd</th>
+              <th>Vlr Un.</th>
+              <th>Vlr Tot.</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for ver in listadados %}
+            <tr >
+                <td style="width: 100px;"> <a href="cadentrada?id={{ ver.IDENTR }} "> {{ ver.IDENTR }}</a></td>
+                <td >{{ ver.DESCRICAO }}</td>
+                <td >{{ ver.DTENTR }}</td>
+                <td >{{ ver.QTD }}</td>
+                <td >{{ ver.VLRUN|currency }}</td>
+                <td >{{ ver.VLRTOT|currency }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    </div>
+{% endblock %}
